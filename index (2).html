@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yaseen Syed Ali Saifullah Mundusreen — Verfahrensingenieur</title>
+<meta name="description" content="Masterstudent im Verfahrensingenieurwesen mit Expertise in Oberflächencharakterisierung, technischer Sauberkeitsanalyse, Nasschemie und Korrosionsprüfung." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #111418;
+  --ink-soft: #2a2f38;
+  --paper: #fafaf7;
+  --paper-warm: #f0ede4;
+  --steel: #4a5568;
+  --gold: #b8860b;
+  --gold-bright: #d4a017;
+  --line: #d6d3c8;
+  --muted: #767e8c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--ink) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ink) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 1.4rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgba(250, 250, 247, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(17, 20, 24, 0.07);
+}
+
+.nav-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.nav-mark .initials {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+
+.hero {
+  min-height: 100vh;
+  padding: 8rem 3rem 5rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+
+.hero-meta::before {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 6.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin-bottom: 2.2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.4s forwards;
+}
+
+h1 .accent {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.hero-tag {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 36rem;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+  line-height: 1.7;
+}
+
+.hero-tag strong {
+  font-weight: 600;
+  color: var(--ink);
+  background: linear-gradient(180deg, transparent 62%, rgba(184, 134, 11, 0.22) 62%);
+  padding: 0 2px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.8s forwards;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 1.8rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.btn-secondary { background: transparent; color: var(--ink); }
+.btn-secondary:hover { background: var(--ink); color: var(--paper); }
+.btn .arrow { transition: transform 0.3s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+.hero-portrait {
+  position: relative;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.5s forwards;
+  display: flex;
+  justify-content: center;
+}
+
+.portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.portrait-frame::before {
+  content: '';
+  position: absolute;
+  top: 18px; left: 18px;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--ink);
+  z-index: 0;
+  transition: transform 0.5s ease;
+}
+
+.portrait-frame:hover::before { transform: translate(6px, 6px); }
+
+.portrait-frame::after {
+  content: '';
+  position: absolute;
+  top: -18px; left: -18px;
+  width: 60%;
+  height: 60%;
+  border-top: 1.5px solid var(--gold);
+  border-left: 1.5px solid var(--gold);
+  z-index: 0;
+  transition: transform 0.5s ease;
+}
+
+.portrait-frame:hover::after { transform: translate(-4px, -4px); }
+
+.portrait-frame img {
+  position: relative;
+  width: 100%;
+  display: block;
+  z-index: 1;
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.5s ease;
+}
+
+.portrait-frame:hover img { filter: grayscale(0%) contrast(1); }
+
+.portrait-tag {
+  position: absolute;
+  bottom: -22px; right: -22px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 0.7rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  z-index: 2;
+}
+
+.portrait-tag strong { color: var(--gold); display: block; font-size: 0.75rem; margin-top: 2px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.marquee {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1.2rem 0;
+  overflow: hidden;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+  z-index: 1;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 4rem;
+  white-space: nowrap;
+  animation: scroll 35s linear infinite;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+.marquee-track span {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.marquee-track .dot {
+  color: var(--gold-bright);
+  font-style: normal;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+section {
+  padding: 6rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: end;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1.5rem;
+}
+
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.about {
+  background: var(--paper-warm);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4rem;
+  color: var(--ink-soft);
+}
+
+.about-text p:first-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.about-stats {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.stat {
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem;
+}
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-top: 0.6rem;
+}
+
+/* ============ Experience timeline EXPANDED ============ */
+.timeline { position: relative; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 220px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold) 5%, var(--gold) 95%, transparent);
+  margin-left: 1.5rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 220px;
+  top: 3.2rem;
+  width: 14px;
+  height: 14px;
+  background: var(--paper);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  margin-left: 1.1rem;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.timeline-item:hover::before {
+  background: var(--gold);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 6px rgba(184, 134, 11, 0.15);
+}
+
+.timeline-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  padding-top: 0.5rem;
+}
+
+.timeline-content { padding-left: 2.5rem; }
+
+.timeline-content h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.timeline-content .role {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.timeline-content .role-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  background: var(--gold);
+  color: var(--paper);
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.exp-summary {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  padding: 1.2rem 1.5rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(184, 134, 11, 0.05);
+}
+
+.exp-tasks { display: grid; gap: 1.5rem; }
+
+.task-block {
+  padding: 1.5rem;
+  background: var(--paper);
+  border: 1px solid rgba(17, 20, 24, 0.12);
+  transition: all 0.3s ease;
+}
+
+.task-block:hover {
+  border-color: var(--gold);
+  transform: translateX(8px);
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.task-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--ink);
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.task-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.task-desc {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-left: 2.4rem;
+  line-height: 1.6;
+}
+
+.task-desc strong { color: var(--ink); font-weight: 600; }
+
+.task-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  margin-left: 2.4rem;
+}
+
+.task-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--paper-warm);
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.edu-card {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 0;
+  background: var(--ink);
+  transition: height 0.4s ease;
+  z-index: 0;
+}
+
+.edu-card:hover::before { height: 100%; }
+.edu-card:hover * { color: var(--paper) !important; }
+.edu-card:hover .edu-degree { color: var(--gold-bright) !important; }
+.edu-card > * { position: relative; z-index: 1; }
+
+.edu-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.edu-degree {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.edu-school {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.edu-coursework {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  border-top: 1px solid rgba(17, 20, 24, 0.12);
+  padding-top: 1rem;
+}
+
+.edu-coursework span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ============ Thesis EXPANDED ============ */
+.thesis {
+  background: var(--paper-warm);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.thesis-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.thesis-meta-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.thesis-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--ink);
+}
+
+.thesis-badge.accent {
+  background: var(--gold);
+  color: var(--paper);
+  border-color: var(--gold);
+}
+
+.thesis-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.thesis-title em { font-style: italic; color: var(--gold); }
+
+.thesis-abstract {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  padding: 1.5rem;
+  border-left: 3px solid var(--gold);
+  background: var(--paper);
+  font-style: italic;
+}
+
+.thesis-metrics-stack { display: grid; gap: 1rem; }
+
+.metric-big {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.metric-big:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.metric-big:hover .metric-num,
+.metric-big:hover .metric-label { color: var(--gold-bright); }
+
+.metric-big .metric-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--gold);
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.metric-big .metric-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-top: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.process-flow {
+  margin: 4rem 0;
+  padding: 2.5rem;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+}
+
+.process-flow-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+  position: relative;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--paper-warm);
+  transition: all 0.4s ease;
+}
+
+.process-step:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-4px);
+}
+
+.process-step:hover .step-num { color: var(--gold-bright); border-color: var(--gold-bright); }
+.process-step:hover .step-name { color: var(--paper); }
+.process-step:hover .step-desc { color: rgba(250, 250, 247, 0.7); }
+
+.step-num {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 0.8rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.step-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.step-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.process-step::after {
+  content: '→';
+  position: absolute;
+  right: -0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 1.2rem;
+  font-weight: 300;
+  z-index: 1;
+}
+
+.process-step:last-child::after { display: none; }
+
+.thesis-details { display: grid; gap: 1rem; }
+
+.detail-block {
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.detail-header {
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: var(--paper);
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.detail-header:hover { background: var(--paper-warm); }
+
+.detail-block.open .detail-header {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.detail-block.open .detail-header .detail-num { color: var(--gold-bright); }
+.detail-block.open .detail-header .detail-toggle { color: var(--gold-bright); transform: rotate(45deg); }
+
+.detail-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-right: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.detail-title-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  flex: 1;
+  letter-spacing: -0.01em;
+}
+
+.detail-toggle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.4s ease, color 0.3s ease;
+  font-weight: 300;
+}
+
+.detail-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.detail-block.open .detail-body { max-height: 800px; }
+
+.detail-body-inner {
+  padding: 0 1.8rem 1.8rem;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.detail-body-inner strong { color: var(--ink); font-weight: 600; }
+
+.detail-body-inner ul {
+  list-style: none;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.detail-body-inner li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.detail-body-inner li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.7rem;
+  width: 0.7rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+.pub-wrap {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.pub-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2.5rem;
+  padding: 2.5rem;
+  border: 1px solid var(--ink);
+  align-items: center;
+  background: var(--paper);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.pub-card:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.pub-card:hover .pub-meta { color: var(--gold-bright); }
+.pub-card:hover .pub-link { color: var(--gold-bright); border-color: var(--gold-bright); }
+.pub-card:hover .pub-icon { color: var(--gold-bright); }
+
+.pub-icon {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 0.9;
+}
+
+.pub-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.pub-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+
+.pub-card .journal {
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.pub-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.skills {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.skills .section-head { border-bottom-color: var(--paper); }
+.skills .section-num { color: var(--gold-bright); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 4rem;
+}
+
+.skill-group h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold-bright);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(250, 250, 247, 0.2);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-tag {
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(250, 250, 247, 0.3);
+  font-size: 0.85rem;
+  font-weight: 400;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+
+.skill-tag:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.skill-tag.priority {
+  border-color: var(--gold-bright);
+  color: var(--gold-bright);
+}
+
+.extras {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(250, 250, 247, 0.2);
+}
+
+.extras-block h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold-bright);
+  margin-bottom: 1.5rem;
+}
+
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(250, 250, 247, 0.15);
+}
+
+.lang-row:last-child { border-bottom: none; }
+
+.lang-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.lang-level {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold-bright);
+}
+
+.cert-list {
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cert-list li {
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(250, 250, 247, 0.2);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.cert-list li:hover {
+  border-color: var(--gold-bright);
+  transform: translateX(6px);
+}
+
+.cert-list li::before {
+  content: '✓';
+  color: var(--gold-bright);
+  font-weight: 600;
+}
+
+.contact {
+  background: var(--paper-warm);
+  text-align: center;
+  padding: 7rem 3rem;
+  border-top: 1px solid var(--ink);
+}
+
+.contact-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.contact h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 2rem;
+}
+
+.contact h2 em { font-style: italic; color: var(--gold); }
+
+.contact-email {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.3rem;
+  margin-bottom: 3rem;
+  transition: color 0.3s ease;
+}
+
+.contact-email:hover { color: var(--gold); }
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--muted);
+}
+
+.contact-info a { color: inherit; text-decoration: none; transition: color 0.3s; }
+.contact-info a:hover { color: var(--gold); }
+
+footer {
+  background: var(--ink);
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(250, 250, 247, 0.5);
+}
+
+@media (max-width: 968px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero, section, footer, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .hero { grid-template-columns: 1fr; gap: 4rem; padding-top: 7rem; }
+  .portrait-frame { max-width: 280px; }
+  .section-head { grid-template-columns: 1fr; gap: 1rem; }
+  .about-grid, .skills-grid, .education-grid, .pub-card, .extras, .thesis-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .timeline::before { left: 0; margin-left: 6px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 1rem; padding-left: 2rem; }
+  .timeline-item::before { left: 0; margin-left: 0; top: 2.8rem; }
+  .timeline-content { padding-left: 0; }
+  .pub-card { text-align: center; }
+  .pub-icon { font-size: 3rem; }
+  footer { flex-direction: column; gap: 0.6rem; text-align: center; }
+  .process-steps { grid-template-columns: 1fr; gap: 1rem; }
+  .process-step::after { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-mark">
+    <span class="initials">YS</span>
+    <span>Yaseen Syed Ali</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#experience">Erfahrung</a></li>
+    <li><a href="#education">Ausbildung</a></li>
+    <li><a href="#thesis">Bachelorarbeit</a></li>
+    <li><a href="#skills">Fähigkeiten</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-meta">M.Sc. Verfahrenstechnik · Offenburg, DE</div>
+    <h1>Präzision in<br><span class="accent">Oberfläche</span> & Prozess.</h1>
+    <p class="hero-tag">
+      Masterstudent im Verfahrensingenieurwesen mit fundierter Ausbildung in
+      Materialwissenschaft und Chemieingenieurwesen. Spezialisiert auf
+      <strong>Oberflächencharakterisierung</strong>, <strong>technische Sauberkeitsanalyse</strong>,
+      <strong>nasschemische Analytik</strong> und chemisch-physikalische Methodenentwicklung —
+      mit Fokus auf laborpräzise Verfahren für industrielle Anwendungen.
+    </p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-primary">Profil ansehen <span class="arrow">→</span></a>
+      <a href="mailto:saifullayaseen@gmail.com" class="btn btn-secondary">Kontakt aufnehmen</a>
+    </div>
+  </div>
+
+  <div class="hero-portrait">
+    <div class="portrait-frame">
+      <img src="data:image/jpeg;base64,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" alt="Yaseen Syed Ali Saifullah Mundusreen" />
+      <div class="portrait-tag">
+        Verfügbar
+        <strong>Praktikum · 2026</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>
+      Oberflächencharakterisierung <span class="dot">◆</span>
+      Technische Sauberkeit <span class="dot">◆</span>
+      Nasschemische Analytik <span class="dot">◆</span>
+      Korrosionsprüfung <span class="dot">◆</span>
+      Kontaktwinkelmessung <span class="dot">◆</span>
+      Reaktionstechnik <span class="dot">◆</span>
+      Thermodynamik <span class="dot">◆</span>
+    </span>
+    <span>
+      Oberflächencharakterisierung <span class="dot">◆</span>
+      Technische Sauberkeit <span class="dot">◆</span>
+      Nasschemische Analytik <span class="dot">◆</span>
+      Korrosionsprüfung <span class="dot">◆</span>
+      Kontaktwinkelmessung <span class="dot">◆</span>
+      Reaktionstechnik <span class="dot">◆</span>
+      Thermodynamik <span class="dot">◆</span>
+    </span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="section-head">
+    <div class="section-num">/ 01 — Profil</div>
+    <h2 class="section-title">Ein <em>methodischer</em> Ingenieur.</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        Ich arbeite an der Schnittstelle von Chemie und Verfahrenstechnik —
+        und überführe analytische Genauigkeit in zuverlässige, reproduzierbare
+        Methoden für die industrielle Anwendung.
+      </p>
+      <p>
+        Meine Erfahrung umfasst Oberflächenfunktionalisierung und
+        Materialmodifikation, die Charakterisierung mehrschichtiger
+        Polymersysteme, magnetische Hysteresemessungen sowie deren
+        Auswertung. Hinzu kommt die eigenständige Durchführung kleiner
+        Optimierungsexperimente — einschließlich Probenuntersuchung,
+        nasschemischer und instrumenteller Analytik, Datenauswertung und
+        strukturierter Berichterstattung.
+      </p>
+      <p>
+        Meine Studienschwerpunkte in Thermodynamik, Reaktionstechnik,
+        Oberflächentechnik und instrumenteller Analytik bilden die theoretische
+        Grundlage meiner praktischen Arbeit. Derzeit in Offenburg, Deutschland —
+        fließend in Englisch, Deutsch B1 (auf B2-Niveau) — und offen für
+        Umzug innerhalb Deutschlands.
+      </p>
+    </div>
+
+    <div class="about-stats">
+      <div class="stat">
+        <div class="stat-num">92%</div>
+        <div class="stat-label">Filtrationseffizienz · Bachelorarbeit</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Länder · 5 Hochschulen</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Peer-reviewte Publikation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-head">
+    <div class="section-num">/ 02 — Berufserfahrung</div>
+    <h2 class="section-title">Labor<em>praxis</em> & Forschung.</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Dez 2024 — Sep 2025</div>
+      <div class="timeline-content">
+        <h3>Christian-Albrechts-Universität zu Kiel</h3>
+        <div class="role">Wissenschaftlicher Mitarbeiter — Werkstudent · Kiel, Deutschland</div>
+        <span class="role-tag">Forschung & Entwicklung</span>
+
+        <div class="exp-summary">
+          „In meiner Tätigkeit als Werkstudent habe ich mehrschichtige Polymersysteme
+          analysiert, Oberflächen funktionalisiert und nasschemische Optimierungen
+          durchgeführt — stets mit dem Ziel, reproduzierbare Methoden für die
+          industrielle Qualitätssicherung zu entwickeln."
+        </div>
+
+        <div class="exp-tasks">
+          <div class="task-block">
+            <div class="task-header">
+              <div class="task-icon">01</div>
+              <div class="task-title">Oberflächenfunktionalisierung & Materialmodifikation</div>
+            </div>
+            <div class="task-desc">
+              Durchführung von <strong>Oberflächenfunktionalisierung</strong> und Materialmodifikationen
+              zur Optimierung der Partikelverteilung im Mikromaßstab. Diese Erfahrung ist
+              direkt übertragbar auf <strong>Kontaktwinkelmessung, Bestimmung der Oberflächenenergie
+              und Korrosionsprüfung</strong> — zentrale Verfahren in der industriellen
+              Qualitätssicherung.
+            </div>
+            <div class="task-tags">
+              <span class="task-tag">Surface Functionalization</span>
+              <span class="task-tag">Contact Angle</span>
+              <span class="task-tag">Corrosion Testing</span>
+            </div>
+          </div>
+
+          <div class="task-block">
+            <div class="task-header">
+              <div class="task-icon">02</div>
+              <div class="task-title">Charakterisierung mehrschichtiger Polymersysteme</div>
+            </div>
+            <div class="task-desc">
+              Analyse <strong>mehrschichtiger Polymersysteme</strong> mittels magneto-optischer
+              Mikroskopie zur Untersuchung von Reaktionssystemen und Partikelverhalten —
+              direkt anwendbar auf die <strong>technische Sauberkeitsanalyse von Endprodukten</strong>
+              wie Wälzlagern und Automobilkomponenten.
+            </div>
+            <div class="task-tags">
+              <span class="task-tag">Magneto-Optical Microscopy</span>
+              <span class="task-tag">Polymer Analysis</span>
+              <span class="task-tag">Technical Cleanliness</span>
+            </div>
+          </div>
+
+          <div class="task-block">
+            <div class="task-header">
+              <div class="task-icon">03</div>
+              <div class="task-title">Magnetische Hysteresemessungen & Datenauswertung</div>
+            </div>
+            <div class="task-desc">
+              Durchführung von <strong>magnetischen Hysteresemessungen</strong> unter kontrollierten
+              Parametern und Interpretation der Ergebnisse zur Bewertung von Struktur-Eigenschafts-
+              Beziehungen. Die Resultate flossen in die Materialoptimierung und die Entwicklung
+              neuer <strong>chemisch-physikalischer Analysemethoden</strong> ein.
+            </div>
+            <div class="task-tags">
+              <span class="task-tag">Hysteresis Measurement</span>
+              <span class="task-tag">Method Development</span>
+              <span class="task-tag">Structure-Property</span>
+            </div>
+          </div>
+
+          <div class="task-block">
+            <div class="task-header">
+              <div class="task-icon">04</div>
+              <div class="task-title">Eigenständige Optimierungsprojekte</div>
+            </div>
+            <div class="task-desc">
+              Selbstständige Durchführung kleiner Experimente innerhalb von
+              Optimierungsprojekten — inklusive Probenuntersuchung, <strong>nasschemischer
+              und instrumenteller Analyse von Produktionschemikalien</strong>, Datenauswertung
+              und strukturierter Berichterstattung. Beleg für eine eigenverantwortliche,
+              zielorientierte Arbeitsweise.
+            </div>
+            <div class="task-tags">
+              <span class="task-tag">Wet Chemical Analysis</span>
+              <span class="task-tag">Independent Project Work</span>
+              <span class="task-tag">Technical Documentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" style="background: var(--paper-warm); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);">
+  <div class="section-head">
+    <div class="section-num">/ 03 — Ausbildung</div>
+    <h2 class="section-title">Eine <em>internationale</em> Grundlage.</h2>
+  </div>
+
+  <div class="education-grid">
+    <div class="edu-card">
+      <div class="edu-period">Okt 2025 — laufend</div>
+      <div class="edu-degree">M.Sc. Verfahrenstechnik</div>
+      <div class="edu-school">Hochschule Offenburg · Deutschland</div>
+      <div class="edu-coursework">
+        <span>Studieninhalte</span>
+        Power-to-Gas · Thermochemie · Mehrphasenströmung · Modellierung & Simulation · Prozessleittechnik. Erasmus-Mobilität an der Universität Warmia und Mazury, Olsztyn (Feb–Juni 2026).
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-period">Okt 2024 — Sep 2025</div>
+      <div class="edu-degree">M.Sc. Materialwissenschaft & Werkstofftechnik</div>
+      <div class="edu-school">Christian-Albrechts-Universität Kiel · Deutschland</div>
+      <div class="edu-coursework">
+        <span>Studieninhalte</span>
+        Polymertechnologie · Analytik · Dünnschichten · Elektronenmikroskopie · Oberflächentechnik.
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-period">Okt 2020 — Apr 2024</div>
+      <div class="edu-degree">B.Tech. Chemieingenieurwesen</div>
+      <div class="edu-school">Kongu Engineering College · Erode, Indien</div>
+      <div class="edu-coursework">
+        <span>Studieninhalte</span>
+        Organische & Anorganische Chemie · Reaktionstechnik · Thermodynamik · Strömungsmechanik · Wärme- & Stoffübertragung · Instrumentelle Analytik · Nano- & Verbundwerkstoffe. Studierendenaustausch an der University Malaysia Pahang (Okt 2022 – Feb 2023).
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="thesis" id="thesis">
+  <div class="section-head">
+    <div class="section-num">/ 04 — Bachelorarbeit</div>
+    <h2 class="section-title">Forschungs<em>schwerpunkt</em>.</h2>
+  </div>
+
+  <div class="thesis-hero">
+    <div>
+      <div class="thesis-meta-row">
+        <span class="thesis-badge accent">März 2024</span>
+        <span class="thesis-badge">Kongu Engineering College</span>
+        <span class="thesis-badge">Erode, Indien</span>
+      </div>
+      <div class="thesis-title">
+        Synthese und Charakterisierung eines TiO₂@SiO₂–CuS-getragenen <em>Nanokomposits</em> zur Herstellung einer CA-Membran
+      </div>
+      <div class="thesis-abstract">
+        „Im Rahmen meiner Bachelorarbeit habe ich ein neuartiges TiO₂@SiO₂–CuS-Nanokomposit
+        synthetisiert, optimiert und für den Einsatz in Celluloseacetat-Membranen zur
+        Wasserbehandlung qualifiziert. Die strukturelle und morphologische Charakterisierung
+        erfolgte mittels XRD, SEM und FTIR — mit dem Ergebnis einer Filtrationseffizienz von 92 %."
+      </div>
+    </div>
+
+    <div class="thesis-metrics-stack">
+      <div class="metric-big">
+        <div class="metric-num">+92%</div>
+        <div class="metric-label">Filtrationseffizienz</div>
+      </div>
+      <div class="metric-big">
+        <div class="metric-num">3</div>
+        <div class="metric-label">Charakterisierungs­methoden</div>
+      </div>
+      <div class="metric-big">
+        <div class="metric-num">H₂O</div>
+        <div class="metric-label">Anwendung: Wasseraufbereitung</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="process-flow">
+    <div class="process-flow-title">— Methodischer Ablauf —</div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-name">Synthese</div>
+        <div class="step-desc">TiO₂@SiO₂–CuS Nanokomposit-Synthese</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-name">Optimierung</div>
+        <div class="step-desc">Prozessparameter & Materialeigenschaften</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-name">Charakterisierung</div>
+        <div class="step-desc">XRD · SEM · FTIR Analytik</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-name">Membranherstellung</div>
+        <div class="step-desc">Celluloseacetat-Matrix mit Komposit</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <div class="step-name">Validierung</div>
+        <div class="step-desc">Filtrationseffizienz: 92 %</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thesis-details">
+    <div class="detail-block">
+      <div class="detail-header">
+        <span class="detail-num">A</span>
+        <span class="detail-title-text">Versuchsdesign & laborbasierte Synthese</span>
+        <span class="detail-toggle">+</span>
+      </div>
+      <div class="detail-body">
+        <div class="detail-body-inner">
+          <p>
+            Konzeption und Durchführung von <strong>Synthese- und Verfahrensexperimenten im Labormaßstab</strong>
+            zur Herstellung des TiO₂@SiO₂–CuS-Nanokomposits. Das Vorgehen umfasste die systematische
+            Variation von Prozessparametern und die eigenverantwortliche Optimierung der
+            Materialzusammensetzung.
+          </p>
+          <ul>
+            <li>Eigenständige Durchführung kleiner Experimente innerhalb des Optimierungsprojekts</li>
+            <li>Iterative Anpassung von Konzentrationen, Temperatur und Reaktionszeit</li>
+            <li>Strukturierte Dokumentation aller Versuchsschritte und Ergebnisse</li>
+            <li>Unterstützung der Material- und Prozessentwicklung durch reproduzierbare Verfahren</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-header">
+        <span class="detail-num">B</span>
+        <span class="detail-title-text">Strukturelle & morphologische Charakterisierung</span>
+        <span class="detail-toggle">+</span>
+      </div>
+      <div class="detail-body">
+        <div class="detail-body-inner">
+          <p>
+            Anwendung von <strong>XRD, SEM und FTIR</strong> zur Analyse von Kristallinität, Morphologie
+            und chemischer Zusammensetzung des Nanokomposits. Die Ergebnisse bildeten die
+            Grundlage für die Entwicklung <strong>chemisch-physikalischer Analysemethoden</strong>,
+            die auf Produktion und Qualitätskontrolle übertragbar sind.
+          </p>
+          <ul>
+            <li><strong>XRD</strong> — Bestimmung der Kristallstruktur und Phasenzusammensetzung</li>
+            <li><strong>SEM</strong> — Untersuchung der Oberflächenmorphologie und Partikelgröße</li>
+            <li><strong>FTIR</strong> — Identifikation funktioneller Gruppen und chemischer Bindungen</li>
+            <li>Versuchsplanung, Datenauswertung und Interpretation der Ergebnisse</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-header">
+        <span class="detail-num">C</span>
+        <span class="detail-title-text">Membranherstellung & Performance</span>
+        <span class="detail-toggle">+</span>
+      </div>
+      <div class="detail-body">
+        <div class="detail-body-inner">
+          <p>
+            Einarbeitung des optimierten Nanokomposits in eine <strong>Celluloseacetat-Matrix</strong>
+            zur Herstellung funktionaler Filtermembranen. Durch gezielte Prozessoptimierung
+            wurde eine <strong>Filtrationseffizienz von 92 %</strong> erreicht — ein signifikanter
+            Beitrag zu innovativen Trennverfahren in der Wasseraufbereitung.
+          </p>
+          <ul>
+            <li>Polysulfon-Celluloseacetat als Polymermatrix</li>
+            <li>Homogene Verteilung des Nanokomposits in der Membranstruktur</li>
+            <li>Validierung der Filtrationsleistung an realitätsnahen Probelösungen</li>
+            <li>Resultierende Veröffentlichung in <em>Desalination and Water Treatment</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pub-wrap">
+  <div class="section-head">
+    <div class="section-num">/ 05 — Publikation</div>
+    <h2 class="section-title">Peer-<em>reviewed</em>.</h2>
+  </div>
+
+  <a href="https://doi.org/10.1016/j.dwt.2024.100636" class="pub-card" target="_blank" rel="noopener">
+    <div class="pub-icon">§</div>
+    <div>
+      <div class="pub-meta">Vol. 320 · Artikel 100636 · Oktober 2024</div>
+      <h3>Fabrication of Polysulfone–Cellulose Acetate Based TiO₂@SiO₂–CuS and Fe₃O₄@XG Membrane and Its Application in Waste Water Treatment</h3>
+      <div class="journal">Desalination and Water Treatment</div>
+    </div>
+    <span class="pub-link">DOI ↗</span>
+  </a>
+</section>
+
+<section class="skills" id="skills">
+  <div class="section-head">
+    <div class="section-num">/ 06 — Kompetenzen</div>
+    <h2 class="section-title" style="color: var(--paper);">Technisches <em style="color:var(--gold-bright);">Profil</em>.</h2>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Software</h4>
+      <div class="skill-tags">
+        <span class="skill-tag priority">Aspen Plus</span>
+        <span class="skill-tag">AutoCAD</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">MATLAB</span>
+        <span class="skill-tag">LabVIEW</span>
+        <span class="skill-tag">OriginLab</span>
+        <span class="skill-tag">MS Office</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h4>Labor- & Analyseverfahren</h4>
+      <div class="skill-tags">
+        <span class="skill-tag priority">Technische Sauberkeitsanalyse</span>
+        <span class="skill-tag priority">Nasschemische Analytik</span>
+        <span class="skill-tag priority">Kontaktwinkelmessung</span>
+        <span class="skill-tag">SEM</span>
+        <span class="skill-tag">XRD</span>
+        <span class="skill-tag">FTIR</span>
+        <span class="skill-tag">EDS</span>
+        <span class="skill-tag">Spin Coating</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h4>Fachliche Schwerpunkte</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Oberflächencharakterisierung</span>
+        <span class="skill-tag">Bestimmung der Oberflächenenergie</span>
+        <span class="skill-tag">Korrosionsprüfung</span>
+        <span class="skill-tag">Reaktionstechnik</span>
+        <span class="skill-tag">Thermodynamik</span>
+        <span class="skill-tag">Materialmodifikation</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h4>Soft Skills</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Eigenständige Arbeitsweise</span>
+        <span class="skill-tag">Zeitmanagement</span>
+        <span class="skill-tag">Eigenmotivation</span>
+        <span class="skill-tag">Teamarbeit</span>
+        <span class="skill-tag">Engagement</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="extras">
+    <div class="extras-block">
+      <h4>Sprachen</h4>
+      <div class="lang-row">
+        <span class="lang-name">Tamil</span>
+        <span class="lang-level">Muttersprache</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Englisch</span>
+        <span class="lang-level">Fließend</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Deutsch</span>
+        <span class="lang-level">B1 → B2</span>
+      </div>
+    </div>
+
+    <div class="extras-block">
+      <h4>Zertifikate & Weiterbildungen</h4>
+      <ul class="cert-list">
+        <li>Microsoft Excel Essentials</li>
+        <li>MATLAB Onramp</li>
+        <li>Goethe Deutsch A1</li>
+        <li>Natural Gas — Coursera</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-eyebrow">/ 07 — Kontakt</div>
+  <h2>Offen für <em>Praktika</em><br>& Werkstudentenstellen.</h2>
+  <a href="mailto:saifullayaseen@gmail.com" class="contact-email">saifullayaseen@gmail.com</a>
+  <div class="contact-info">
+    <span>+49 152 22352062</span>
+    <a href="https://linkedin.com/in/saifullahyaseen/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <span>Offenburg, Deutschland</span>
+    <span>Visa: Student</span>
+    <span>Offen für: Deutschland</span>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Yaseen Syed Ali Saifullah Mundusreen</div>
+  <div>Erstellt für Bewerbungen im Ingenieurwesen</div>
+</footer>
+
+<script>
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('section:not(.hero)').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(40px)';
+  section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  sectionObserver.observe(section);
+});
+
+const timelineObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.timeline-item').forEach(item => timelineObserver.observe(item));
+
+// Animated counters for stats
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.animated) {
+      entry.target.dataset.animated = 'true';
+      const text = entry.target.textContent.trim();
+      const match = text.match(/^(\+?)(\d+)(.*)$/);
+      if (match) {
+        const prefix = match[1];
+        const num = parseInt(match[2]);
+        const suffix = match[3];
+        entry.target.textContent = prefix + '0' + suffix;
+        const start = performance.now();
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / 1500, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(num * eased);
+          entry.target.textContent = prefix + current + suffix;
+          if (progress < 1) requestAnimationFrame(update);
+          else entry.target.textContent = prefix + num + suffix;
+        }
+        requestAnimationFrame(update);
+      }
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-num, .metric-big .metric-num').forEach(el => counterObserver.observe(el));
+
+// Accordion details
+document.querySelectorAll('.detail-header').forEach(header => {
+  header.addEventListener('click', () => {
+    header.parentElement.classList.toggle('open');
+  });
+});
+
+// Open first accordion by default
+const firstDetail = document.querySelector('.detail-block');
+if (firstDetail) firstDetail.classList.add('open');
+</script>
+
+</body>
+</html>
